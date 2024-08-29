@@ -1,3 +1,15 @@
 GET http://localhost:8000/alex
 
 ####
+
+GET http://localhost:8000/characters
+
+####
+
+GET http://localhost:8000/characters/1
+
+####
+
+POST http://localhost:8000/characters
+
+####
