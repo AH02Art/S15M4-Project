@@ -6,10 +6,15 @@ GET http://localhost:8000/characters
 
 ####
 
-GET http://localhost:8000/characters/1
+GET http://localhost:8000/characters/7
 
 ####
 
 POST http://localhost:8000/characters
+Content-Type: application/json
+
+{
+    "name": "Daisy"
+}
 
 ####

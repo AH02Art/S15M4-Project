@@ -9,8 +9,9 @@ function getById(id) {
         .where("id", id).first();
 }
 
-function add(character) {
-    return null;
+async function add(character) {
+    const [ id ] = await db("characters").insert(character);
+    return getById(id);
 }
 
 module.exports = { getAll, getById, add };

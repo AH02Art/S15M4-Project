@@ -32,7 +32,7 @@ server.get("/characters/:id", async function(request, response) {
         const { id } = request.params;
         const data = await Character.getById(id)
         if (!data) {
-            response.status(404).json({ message: `user with id: ${id} is not found` });
+            response.status(404).json({ message: `character with id: ${id} is not found` });
         } else {
             response.status(200).json(data);
         }
@@ -44,8 +44,21 @@ server.get("/characters/:id", async function(request, response) {
     }
 })
 
-server.post("/characters", function(request, response) {
-    response.json("add()")
+server.post("/characters", async function(request, response) {
+    try {
+        const data = await Character.add({ name: request.body.name.trim() });
+        console.log(request.body);
+        if (!data) {
+            response.status(400).json({ message: "this character couldn't be added" });
+        } else {
+            response.status(201).json(data);
+        }
+    } catch(error) {
+        response.status(500).json({ 
+            message: error.message, 
+            customMessage: "Something went wrong adding a new character" 
+        });        
+    }
 })
 
 server.use("*", function(request, response) {
