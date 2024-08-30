@@ -4,4 +4,13 @@ function getAll() {
     return db("characters");
 }
 
-module.exports = { getAll };
+function getById(id) {
+    return db("characters")
+        .where("id", id).first();
+}
+
+function add(character) {
+    return null;
+}
+
+module.exports = { getAll, getById, add };
