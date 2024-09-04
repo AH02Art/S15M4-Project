@@ -2,15 +2,15 @@
   "name": "node-testing2-project",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
-    "rollback": "knex migrate:rollback",
-    "migrate": "knex migrate:latest",
-    "seed": "knex seed:run",
-    "resetdb": "npm run rollback && npm run migrate && npm run seed",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "start": "node index.js",
+  "server": "nodemon index.js",
+  "rollback": "knex migrate:rollback",
+  "migrate": "knex migrate:latest",
+  "seed": "knex seed:run",
+  "resetdb": "npm run rollback && npm run migrate && npm run seed",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bloominstituteoftechnology/node-testing2-project.git"
