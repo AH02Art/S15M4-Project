@@ -13,7 +13,6 @@ server.get("/alex", function(request, response) {
 server.get("/characters", async function(request, response) {
     try {
         const data = await Character.getAll();
-        console.log("characters =", data);
         if (!data) {
             response.json({ message: "Couldn't fetch the characters" });
         } else {
@@ -47,7 +46,6 @@ server.get("/characters/:id", async function(request, response) {
 server.post("/characters", async function(request, response) {
     try {
         const data = await Character.add({ name: request.body.name.trim() });
-        console.log(request.body);
         if (!data) {
             response.status(400).json({ message: "this character couldn't be added" });
         } else {

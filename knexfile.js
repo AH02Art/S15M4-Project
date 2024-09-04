@@ -6,6 +6,12 @@ const settings = {
 };
 
 module.exports = {
+  development: {
+    ...settings,
+    connection: {
+      filename: "./data/development.db3",
+    },    
+  },
   testing: {
     ...settings,
     connection: {
